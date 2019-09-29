@@ -1,0 +1,36 @@
+.collapse {
+    padding-left: 84%;
+}
+
+.img-thumbnail img {
+    width: 100%;
+}
+
+.img-thumbnail {
+    padding: 0;
+}
+
+.container .first {
+    background: rgba(240, 167, 167, 0.1);
+
+}
+
+.common {
+    float: right;
+}
+
+.comment {
+    float: right;
+}
+
+.figure-caption {
+    padding: 10px;
+}
+
+.caption {
+    padding-left: 30%; 
+}
+
+#delete-form {
+    display: inline;
+}

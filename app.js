@@ -76,7 +76,13 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-
+if(process.env.PORT)
+{
  app.listen(process.env.PORT, function(){
-     console.log("server started at 900");
+     console.log("server started at designated port");
  });
+} else {
+    app.listen(900, function(){
+        console.log("server started at port 900");
+});
+}

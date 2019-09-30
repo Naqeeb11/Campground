@@ -75,6 +75,6 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 
- app.listen(900, function(){
+ app.listen(process.env.PORT, function(){
      console.log("server started at 900");
  });

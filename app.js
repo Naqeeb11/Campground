@@ -19,14 +19,16 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
+//connection using environment variable
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 //mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-mongoose.connect("mongodb+srv://naqeeb:1234@yelpcamp-6dkey.mongodb.net/test?retryWrites=true&w=majority",
- {useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true, useFindAndModify: false
-}).then(() => {
-     console.log("Connected to db");
- }).catch(err => {
-     console.log("error", err.message);
- });
+// mongoose.connect("mongodb+srv://naqeeb:1234@yelpcamp-6dkey.mongodb.net/test?retryWrites=true&w=majority",
+//  {useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true, useFindAndModify: false
+// }).then(() => {
+//      console.log("Connected to db");
+//  }).catch(err => {
+//      console.log("error", err.message);
+//  });
 //  mongoose.connect("mongodb+srv://naqeeb:1234@yelpcamp-6dkey.mongodb.net/test?retryWrites=true&w=majority",
 //   {useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true, useFindAndModify: false
 //  });

@@ -19,8 +19,9 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
-//connection using environment variable
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+//connection using environment variable-generally used to hide information
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp_v12";
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});//this line protects our data privacy
 //mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 // mongoose.connect("mongodb+srv://naqeeb:1234@yelpcamp-6dkey.mongodb.net/test?retryWrites=true&w=majority",
 //  {useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true, useFindAndModify: false
@@ -33,14 +34,6 @@ mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true, useUnifiedTopo
 //   {useNewUrlParser: true, useCreateIndex: true ,useUnifiedTopology: true, useFindAndModify: false
 //  });
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://naqeeb:1234@yelpcamp-6dkey.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true ,useUnifiedTopology: true});
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 
 
